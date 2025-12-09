@@ -11,7 +11,7 @@ st.caption("Universidad Panamericana · Campus CDMX")
 # -----------------------------------------------------------
 @st.cache_data
 def load_data():
-    url="UBER dataset.xlsx"
+    url="https://github.com/jesartjm/dashboard_bi_2025/blob/main/UBER%20dataset.xlsx"
     all_sheets = pd.read_excel(url, sheet_name=None)
     return all_sheets['Switchbacks']
 df = load_data()

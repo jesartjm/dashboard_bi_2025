@@ -11,7 +11,7 @@ st.caption("Universidad Panamericana · Campus CDMX")
 # -----------------------------------------------------------
 @st.cache_data
 def load_data():
-    url="https://github.com/jesartjm/dashboard_bi_2025/blob/main/UBER%20dataset.xlsx"
+    url="UBER dataset.xlsx"
     all_sheets = pd.read_excel(url, sheet_name=None)
     return all_sheets['Switchbacks']
 df = load_data()
@@ -90,7 +90,19 @@ with tab1:
 with tab2:
     st.subheader("Dataset del ejercicio")
 
-    st.dataframe(df)
+    st.write("Selecciona el rango de observaciones que deseas visualizar:")
+
+    # Slider de rango equivalente a IntRangeSlider de ipywidgets
+    start, end = st.slider(
+        "Rango de filas:",
+        min_value=0,
+        max_value=len(df),
+        value=(0, len(df)),   # valor inicial: toda la tabla
+        step=1
+    )
+
+    # Mostrar sección del dataframe
+    st.dataframe(df.iloc[start:end])
 
 # -----------------------------------------------------------
 # TAB 3: Resumen e Insights

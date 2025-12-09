@@ -1,7 +1,6 @@
 import streamlit as st
 
-st.markdown("""Inteligencia de Negocios
-## 🧠 Tablero Interactivo de Inteligencia de Negocios
+st.markdown("""## 🧠 Tablero Interactivo de Inteligencia de Negocios
 
 ## Universidad Panamericana – Campus Ciudad de México
 <img src="https://posgrados-panamericana.up.edu.mx/hs-fs/hubfs/logo%20posgrados%20con%20espacio.png?width=137&name=logo%20posgrados%20con%20espacio.png" width=150>

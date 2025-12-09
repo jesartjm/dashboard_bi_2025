@@ -1,4 +1,5 @@
 import streamlit as st
+import pandas as pd
 
 # Configuración de la página
 st.set_page_config(page_title="Tablero de Inteligencia de Negocios", layout="wide")

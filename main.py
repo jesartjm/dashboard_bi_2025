@@ -1,7 +1,6 @@
 import streamlit as st
 
-st.markdown("""# dashboard_bi_2025
-Inteligencia de Negocios
+st.markdown("""Inteligencia de Negocios
 ## 🧠 Tablero Interactivo de Inteligencia de Negocios
 
 ## Universidad Panamericana – Campus Ciudad de México

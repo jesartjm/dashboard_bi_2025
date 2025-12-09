@@ -1,5 +1,30 @@
 import streamlit as st
 
+# Configuración de la página
+st.set_page_config(page_title="Tablero de Inteligencia de Negocios", layout="wide")
+
+st.title("📊 Tablero Interactivo – Inteligencia de Negocios")
+st.caption("Universidad Panamericana · Campus CDMX")
+
+# -----------------------------------------------------------
+# CARGA DE DATOS
+# -----------------------------------------------------------
+@st.cache_data
+def load_data():
+    url='https://docs.google.com/spreadsheets/d/1t3ZSSmUUCmIKh5KtLT1uMrA5-9R98fx2/edit?usp=sharing&ouid=108834585291917
+    modified_url = url.replace('/edit?usp=sharing', '/export?format=xlsx')
+    all_sheets = pd.read_excel(modified_url, sheet_name=None)
+    return all_sheets['Switchbacks']
+df = load_data()
+# -----------------------------------------------------------
+# PESTAÑAS PRINCIPALES
+# -----------------------------------------------------------
+tab1, tab2, tab3 = st.tabs(["📈 Documentación General", "🔍 Datos", "📊 Gráficas"])
+
+# -----------------------------------------------------------
+# TAB 1: Info
+# -----------------------------------------------------------
+with tab1:
 st.markdown("""## 🧠 Tablero Interactivo de Inteligencia de Negocios
 
 ## Universidad Panamericana – Campus Ciudad de México
@@ -59,3 +84,19 @@ El tablero ofrece una visión clara y enfocada en la toma de decisiones estraté
 Jesús Arturo Jiménez Miranda
 Estudiante de Ingeniería Industrial
 Universidad Panamericana – Campus Ciudad de México""")
+
+# -----------------------------------------------------------
+# TAB 2: Comparaciones
+# -----------------------------------------------------------
+with tab2:
+    st.subheader("Dataset del ejercicio")
+
+    st.dataframe(df)
+
+# -----------------------------------------------------------
+# TAB 3: Resumen e Insights
+# -----------------------------------------------------------
+with tab3:
+    st.subheader("Visualizaciones")
+
+    st.write("Hola Mundo")

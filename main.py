@@ -11,7 +11,7 @@ st.caption("Universidad Panamericana · Campus CDMX")
 # -----------------------------------------------------------
 @st.cache_data
 def load_data():
-    url='https://docs.google.com/spreadsheets/d/1t3ZSSmUUCmIKh5KtLT1uMrA5-9R98fx2/edit?usp=sharing&ouid=108834585291917
+    url='https://docs.google.com/spreadsheets/d/1t3ZSSmUUCmIKh5KtLT1uMrA5-9R98fx2/edit?usp=sharing&ouid=108834585291917'
     modified_url = url.replace('/edit?usp=sharing', '/export?format=xlsx')
     all_sheets = pd.read_excel(modified_url, sheet_name=None)
     return all_sheets['Switchbacks']
